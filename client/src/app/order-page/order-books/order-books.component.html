@@ -1,0 +1,39 @@
+<div *ngIf="books$ | async as books; else loader">
+  <table class="highlight" *ngIf="books.length !== 0; else empty">
+    <thead>
+    <tr>
+      <th>Название</th>
+      <th>Стоимость</th>
+      <th>Количество</th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{book.name}}</td>
+      <td>{{book.cost}} грн.</td>
+      <td>
+        <div class="input-field inline order-book-input">
+          <input type="number" value="1" min="1" [(ngModel)]="book.quantity">
+        </div>
+      </td>
+      <td>
+        <button
+          class="btn waves-effect wavers-light btn-small"
+          (click)="addToOrder(book)"
+          [disabled]="!book.quantity"
+        >Добавить</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <ng-template #empty>
+    <div class="center">У данного автора пока нет книг.</div>
+  </ng-template>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

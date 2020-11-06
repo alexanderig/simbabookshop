@@ -1,0 +1,26 @@
+<div *ngIf="authors$ | async as authors; else loader">
+  <div class="frow order-row" *ngIf="authors.length !== 0; else empty">
+    <div
+      *ngFor="let author of authors"
+      class="card waves-effect pointer"
+      [routerLink]="['/order', author._id]"
+    >
+      <div class="center">
+        <img
+          [src]="author.imageSrc"
+          class="responsive-img order-img"
+        >
+      </div>
+      <div class="card-content center p10">
+        <h5 class="m0">{{author.name}}</h5>
+      </div>
+    </div>
+  </div>
+  <ng-template #empty>
+    <div class="center">Авторов пока нет.</div>
+  </ng-template>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

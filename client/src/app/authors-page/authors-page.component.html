@@ -1,0 +1,36 @@
+<div class="page-title">
+  <h4>Авторы</h4>
+  <button
+    class="waves-effect waves-light btn grey darken-1"
+    routerLink="/authors/new"
+  >
+    Добавить автора
+  </button>
+</div>
+
+<div
+  class="row"
+  *ngIf="authors$ | async as authors; else loader"
+>
+  <div class="col s12">
+    <div class="collection" *ngIf="authors.length !== 0; else empty">
+      <a
+        *ngFor="let author of authors"
+        [routerLink]="['/authors', author._id]"
+        class="collection-item"
+      >
+        {{author.name}}
+      </a>
+    </div>
+    <ng-template #empty>
+      <div class="center">
+        У вас нет ни одного автора
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
+
