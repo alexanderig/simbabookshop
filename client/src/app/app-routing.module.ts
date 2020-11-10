@@ -1,16 +1,16 @@
-import {NgModule} from '@angular/core'
-import {RouterModule, Routes} from '@angular/router'
-import {LoginPageComponent} from './login-page/login-page.component'
-import {AuthLayoutComponent} from './shared/layouts/auth-layout/auth-layout.component'
-import {SiteLayoutComponent} from './shared/layouts/site-layout/site-layout.component'
-import {RegisterPageComponent} from './register-page/register-page.component'
-import {AuthGuard} from './shared/classes/auth.guard'
-import {HistoryPageComponent} from './history-page/history-page.component'
-import {OrderPageComponent} from './order-page/order-page.component'
-import {AuthorsPageComponent} from './authors-page/authors-page.component'
-import {AuthorsFormComponent} from './authors-page/authors-form/authors-form.component'
-import {OrderAuthorsComponent} from './order-page/order-authors/order-authors.component'
-import {OrderBooksComponent} from './order-page/order-books/order-books.component'
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {LoginPageComponent} from './login-page/login-page.component';
+import {AuthLayoutComponent} from './shared/layouts/auth-layout/auth-layout.component';
+import {SiteLayoutComponent} from './shared/layouts/site-layout/site-layout.component';
+import {RegisterPageComponent} from './register-page/register-page.component';
+import {AuthGuard} from './shared/classes/auth.guard';
+import {HistoryPageComponent} from './history-page/history-page.component';
+import {OrderPageComponent} from './order-page/order-page.component';
+import {AuthorsPageComponent} from './authors-page/authors-page.component';
+import {AuthorsFormComponent} from './authors-page/authors-form/authors-form.component';
+import {OrderAuthorsComponent} from './order-page/order-authors/order-authors.component';
+import {OrderBooksComponent} from './order-page/order-books/order-books.component';
 
 
 const routes: Routes = [
@@ -33,7 +33,7 @@ const routes: Routes = [
       {path: 'authors/:id', component: AuthorsFormComponent}
     ]
   }
-]
+];
 
 @NgModule({
   imports: [

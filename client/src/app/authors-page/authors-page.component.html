@@ -10,7 +10,7 @@
 
 <div
   class="row"
-  *ngIf="authors$ | async as authors; else loader"
+  *ngIf="authors$ | async as authors"
 >
   <div class="col s12">
     <div class="collection" *ngIf="authors.length !== 0; else empty">
@@ -30,7 +30,5 @@
   </div>
 </div>
 
-<ng-template #loader>
-  <app-loader></app-loader>
-</ng-template>
+
 

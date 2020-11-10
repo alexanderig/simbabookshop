@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const authorSchema = new Schema({
   name: {
@@ -15,6 +15,6 @@ const authorSchema = new Schema({
     ref: 'users',
     type: Schema.Types.ObjectId
   }
-})
+});
 
-module.exports = mongoose.model('authors', authorSchema)
+module.exports = mongoose.model('authors', authorSchema);

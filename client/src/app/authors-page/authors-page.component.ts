@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core'
-import {AuthorsService} from '../shared/services/authors.service'
-import {Author} from '../shared/interfaces'
-import {Observable} from 'rxjs'
+import {Component, OnInit} from '@angular/core';
+import {AuthorsService} from '../shared/services/authors.service';
+import {Author} from '../shared/interfaces';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-authors-page',
@@ -10,13 +10,13 @@ import {Observable} from 'rxjs'
 })
 export class AuthorsPageComponent implements OnInit {
 
-  authors$: Observable<Author[]>
+  authors$: Observable<Author[]>;
 
   constructor(private authorsService: AuthorsService) {
   }
 
   ngOnInit() {
-    this.authors$ = this.authorsService.fetch()
+    this.authors$ = this.authorsService.fetch();
   }
 
 }

@@ -10,7 +10,7 @@
       </button>
     </div>
 
-    <div *ngIf="!loading; else loader">
+    <div *ngIf="!loading">
       <div class="collection" *ngIf="books.length !== 0; else empty">
         <a
           *ngFor="let book of books"
@@ -29,9 +29,7 @@
         <div class="center">У этого автора книг нет</div>
       </ng-template>
     </div>
-    <ng-template #loader>
-      <app-loader></app-loader>
-    </ng-template>
+
   </div>
 </div>
 

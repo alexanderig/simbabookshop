@@ -1,4 +1,4 @@
-<div *ngIf="books$ | async as books; else loader">
+<div *ngIf="books$ | async as books">
   <table class="highlight" *ngIf="books.length !== 0; else empty">
     <thead>
     <tr>
@@ -34,6 +34,4 @@
   </ng-template>
 </div>
 
-<ng-template #loader>
-  <app-loader></app-loader>
-</ng-template>
+

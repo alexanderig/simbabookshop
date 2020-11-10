@@ -24,22 +24,22 @@
     <div class="input-field">
       <label for="city">Город:</label>
       <br><br>
-      <select class="browser-default" *ngIf="cities$ | async as cities; else loader"
+      <select class="browser-default" *ngIf="cities$ | async as cities"
         formControlName="city"
         id="city"
-        [ngClass]="{'invalid': form.get('city').invalid && form.get('city').touched}"      
+        [ngClass]="{'invalid': form.get('city').invalid && form.get('city').touched}"
       >
       <option value="" disabled selected>Choose your option</option>
       <option *ngFor="let city of cities" [value]="city._id">{{city.name}}</option>
-      </select>     
+      </select>
       <span
         class="helper-text red-text"
         *ngIf="form.get('city').invalid && form.get('city').touched"
       >
         <span *ngIf="form.get('city').errors['required']">City must be selected</span>
-        
+
       </span>
-      
+
     </div>
 
 
