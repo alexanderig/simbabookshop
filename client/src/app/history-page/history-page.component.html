@@ -20,7 +20,7 @@
   (onFilter)="applyFilter($event)"
 ></app-history-filter>
 
-<div *ngIf="!reloading; else reloadingBlock">
+<div *ngIf="!reloading">
   <div *ngIf="orders.length > 0; else empty">
     <app-history-list [orders]="orders"></app-history-list>
     <div
